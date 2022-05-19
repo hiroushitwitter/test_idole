@@ -1,0 +1,175 @@
+<HTML> 
+<HEAD>
+<title>Idolem@ster シンデレラガールズ Starlight Stage</title>
+<style type="text/css">
+body {
+    -webkit-text-size-adjust: none;
+}
+</style>
+
+<script src="idole.js"></script>
+
+
+<body onload="PageLoad();"  BGCOLOR="#EEEEEE" TEXT="#000000"  LEFTMARGIN=10 TOPMARGIN=10 >
+<font size=5> Idolem@ster シンデレラガールズ <br>Starlight Stage</font><br>
+シンデレラガールズスターライトステージに登場する<br>名前が5文字のアイドルのWordleです。<br>
+回答入力欄のテキストボックスにアイドル名を入力して<br>
+チェックボタンを押します。<br>
+「<span style="background-color:#ffa500">オレンジ</span>」は文字は当たっているが位置が違う。<br>
+「<span style="background-color:#008000	">緑</span>」は文字も位置も当たっている。<br>
+「<span style="background-color:#808080	">灰色</span>」はその文字は使われていない。<br><br>
+
+挑戦回数設定：<input type="number"  id="ans_num" value="5" style="width:45px" min="1" max="10" > 回
+<table border=1  style="font-size: 15pt; border-style:none;" >
+<tr ><td style="border-style:none" width=180px>
+<table border=1 Frame="Void" style="font-size: 15pt; " id="ans_table">
+回答結果
+</table>
+回答入力欄<br>
+<input type="text"  maxlength=5  id="wordle_word" value=""  style="width:90%;font-size:100%;" inputmode="kana">
+<div style="margin-right:1px;margin-top: 10px">
+<input type="button"  id="wordle_check" value="チェック">
+<input type="button"  id="wordle_reset" value="最初から">
+</div>
+</td><td style="border-style:none">
+
+<table border=1 style="font-size: 12pt;" >
+<tr>
+<td class=hyou><div id="わ">わ</div></td>
+<td class=hyou><div id="ら">ら</div></td>
+<td class=hyou><div id="や">や</div></td>
+<td class=hyou><div id="ま">ま</div></td>
+<td class=hyou><div id="は">は</div></td>
+<td class=hyou><div id="な">な</div></td>
+<td class=hyou><div id="た">た</div></td>
+<td class=hyou><div id="さ">さ</div></td>
+<td class=hyou><div id="か">か</div></td>
+<td class=hyou><div id="あ">あ</div></td>
+</tr>
+<tr>
+<td ></td>
+<td class=hyou><div id="り">り</div></td>
+<td ></td>
+<td class=hyou><div id="み">み</div></td>
+<td class=hyou><div id="ひ">ひ</div></td>
+<td class=hyou><div id="に">に</div></td>
+<td class=hyou><div id="ち">ち</div></td>
+<td class=hyou><div id="し">し</div></td>
+<td class=hyou><div id="き">き</div></td>
+<td class=hyou><div id="い">い</div></td>
+</tr>
+<tr >
+<td class=hyou><div id="を">を</div></td>
+<td class=hyou><div id="る">る</div></td>
+<td class=hyou><div id="ゆ">ゆ</div></td>
+<td class=hyou><div id="む">む</div></td>
+<td class=hyou><div id="ふ">ふ</div></td>
+<td class=hyou><div id="ぬ">ぬ</div></td>
+<td class=hyou><div id="つ">つ</div></td>
+<td class=hyou><div id="す">す</div></td>
+<td class=hyou><div id="く">く</div></td>
+<td class=hyou><div id="う">う</div></td>
+</tr>
+<tr>
+<td ></td>
+<td class=hyou><div id="れ">れ</div></td>
+<td ></td>
+<td class=hyou><div id="め">め</div></td>
+<td class=hyou><div id="へ">へ</div></td>
+<td class=hyou><div id="ね">ね</div></td>
+<td class=hyou><div id="て">て</div></td>
+<td class=hyou><div id="せ">せ</div></td>
+<td class=hyou><div id="け">け</div></td>
+<td class=hyou><div id="え">え</div></td>
+</tr>
+<tr>
+<td class=hyou><div id="ん">ん</div></td>
+<td class=hyou><div id="ろ">ろ</div></td>
+<td class=hyou><div id="よ">よ</div></td>
+<td class=hyou><div id="も">も</div></td>
+<td class=hyou><div id="ほ">ほ</div></td>
+<td class=hyou><div id="の">の</div></td>
+<td class=hyou><div id="と">と</div></td>
+<td class=hyou><div id="そ">そ</div></td>
+<td class=hyou><div id="こ">こ</div></td>
+<td class=hyou><div id="お">お</div></td>
+</tr>
+<tr>
+<td colspan="10"></td>
+</tr>
+<tr>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぁ">ぁ</div></td>
+<td class=hyou><div id="っ">っ</div></td>
+<td class=hyou><div id="ゃ">ゃ</div></td>
+<td class=hyou><div id="ぱ">ぱ</div></td>
+<td class=hyou><div id="ば">ば</div></td>
+<td class=hyou><div id="だ">だ</div></td>
+<td class=hyou><div id="ざ">ざ</div></td>
+<td class=hyou><div id="が">が</div></td>
+</tr>
+<tr>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぃ">ぃ</div></td>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぴ">ぴ</div></td>
+<td class=hyou><div id="び">び</div></td>
+<td class=hyou><div id="ぢ">ぢ</div></td>
+<td class=hyou><div id="じ">じ</div></td>
+<td class=hyou><div id="ぎ">ぎ</div></td>
+</tr>
+<tr>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぅ">ぅ</div></td>
+<td class=hyou><div id="ー">ー</div></td>
+<td class=hyou><div id="ゅ">ゅ</div></td>
+<td class=hyou><div id="ぷ">ぷ</div></td>
+<td class=hyou><div id="ぶ">ぶ</div></td>
+<td class=hyou><div id="づ">づ</div></td>
+<td class=hyou><div id="ず">ず</div></td>
+<td class=hyou><div id="ぐ">ぐ</div></td>
+</tr>
+<tr>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぇ">ぇ</div></td>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぺ">ぺ</div></td>
+<td class=hyou><div id="べ">べ</div></td>
+<td class=hyou><div id="で">で</div></td>
+<td class=hyou><div id="ぜ">ぜ</div></td>
+<td class=hyou><div id="げ">げ</div></td>
+</tr>
+<tr>
+<td ></td>
+<td ></td>
+<td class=hyou><div id="ぉ">ぉ</div></td>
+<td ></td>
+<td class=hyou><div id="ょ">ょ</div></td>
+<td class=hyou><div id="ぽ">ぽ</div></td>
+<td class=hyou><div id="ぼ">ぼ</div></td>
+<td class=hyou><div id="ど">ど</div></td>
+<td class=hyou><div id="ぞ">ぞ</div></td>
+<td class=hyou><div id="ご">ご</div></td>
+</tr>
+</td></tr></table>
+<br>
+<br>
+</td></tr>
+</table>
+現在の得点：<span id = score style="font-size:16px">0</span>点<br>
+<span id = arert_comment style="font-size:16px"></span><br><br>
+
+機能更新<br>
+<hr>
+・挑戦回数が1回～10回から選べるようになりました。<br>
+・得点機能を追加しました。<br>
+　失敗するまでスコアが加算されます。<br>
+・ちひろさんが連勝数を教えてくれます。<br>
+</body>
+</HTML>
